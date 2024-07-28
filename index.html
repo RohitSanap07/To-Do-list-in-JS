@@ -17,8 +17,38 @@ const tasks = [];
 
 function loadFromLocalStorage(){
 
-    const everyTasks = JSON
+    const everyTasks = JSON.parse(localStorage.getItem('everyTasks'));
+
+if(everyTasks){
+tasks.push(...everyTasks)
 }
+loadTasks();
+
+}
+
+loadFromLocalStorage();
+
+function loadTasks(){
+
+loadStorage.setItem('everyTasks',JSON.stringify(tasks));
+
+const tasksContainer = document.getElementById('tasks-container');
+
+tasksContainer.innerHTML = '';
+
+for(const task of tasks){
+
+    tasksContainer.innerHTML +=; `
+    <div> ${task}
+        <img src="delete.gif" onclick="removeTask('${task}')">
+        </div>
+    
+    `
+}
+
+}
+
+
 
 
 
