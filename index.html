@@ -28,12 +28,46 @@ text-align: center;
 font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 font-size: 40px;
 font-weight: bold;
+}
 
+.tasks-container{
+height: 600px;
+overflow-y: scroll;
+width: 1200px;
+margin: 5px auto;
+}
 
+.btn-add{
+border-radius: 5px;
+font-size: 25px;
+background-color: #ff1aff;
+color: white;
+padding: 5px 30px;
+cursor: pointer;
+display: flex;
+justify-content: center;
+font-weight: bold;
+font-family: 'Times New Roman', Times, serif;
+}
+
+.btn-add:hover{
+    background-color: #ff80ff;
+    color: black;
 }
 
 
+.notes-input-container{
+    display: flex;
+    justify-content: space-around;
+    margin: 10px auto;
+}
 
+.list-structure{
+    height: 900px;
+    width: 1400px;
+    border: 5px solid #330033;
+    margin: 5px auto;
+}
 
 
 
@@ -55,7 +89,13 @@ font-weight: bold;
 <body>
     
 <p class="heading">Keep Notes📝</p>
-<div id="tasks-container"></div>
+
+<div class="list-structure"> 
+<div id="tasks-container" class="tasks-container"></div>
+<div class="notes-input-container">
+<input type="text" id="task-input" placeholder="Enter a Task" class="notes-input">
+</div>
+<center><button onclick="addTask()"  class="btn-add">Add Tasks</button></center>
 
 
 <script>
