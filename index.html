@@ -147,12 +147,22 @@ loadTasks();
 
  }
 
+ function addTask(){
+ const taskInputElement = document.getElementById('task-input');
 
+ const task = taskInputElement.value;
 
+ if(task){
+alert('Please Enter a Task✨')
+return;
+}
 
+ tasks.unshift(task);
+ loadTasks();
 
-
-    </script>
+ taskInputElement.value = '';
+}
+ </script>
 
 
 
