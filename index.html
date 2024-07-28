@@ -68,6 +68,11 @@ font-family: 'Times New Roman', Times, serif;
     border: 5px solid #330033;
     margin: 5px auto;
 }
+.btn-del{
+
+
+}
+
 
 
 
@@ -97,7 +102,7 @@ font-family: 'Times New Roman', Times, serif;
 </div>
 <center><button onclick="addTask()"  class="btn-add">Add Tasks</button></center>
 
-
+</div>
 <script>
 
 const tasks = [];
@@ -125,15 +130,22 @@ tasksContainer.innerHTML = '';
 
 for(const task of tasks){
 
-    tasksContainer.innerHTML +=; `
+    tasksContainer.innerHTML += `
     <div class="notes-item"> ${task}
-        <img src="delete.gif"  onclick="removeTask('${task}')">
+        <img src="delete.gif" type="button" class="btn-del" onclick="removeTask('${task}')">
         </div>
     
     `
 }
-
 }
+
+ function removeTask(Task){
+
+const taskIndex = tasks.indexOf(task);
+tasks.splice(taskIndex,1);
+loadTasks();
+
+ }
 
 
 
